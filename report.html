@@ -62,11 +62,19 @@
   .course h2 { font-size:16.5px; font-weight:600; margin:0 0 2px;
                display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; }
   .course .meta { font-size:12.5px; font-weight:400; color:var(--muted); }
-  .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:10px 0 14px; }
+  .cols { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin:10px 0 14px; }
   .col { background:var(--surface); border:1px solid var(--border);
          border-radius:8px; padding:10px 13px; font-size:13px; min-width:0; }
   .col.hist { border-left:3px solid var(--assigned); }
   .col.nextup { border-left:3px solid var(--good); }
+  .col.donext { border-left:3px solid var(--critical); }
+  .donext li { display:flex; gap:8px; align-items:baseline; }
+  .donext li .c { width:11px; height:11px; flex:none; align-self:center; }
+  .donext .due { color:var(--muted); font-size:12px; white-space:nowrap; }
+  .donext .count { font-size:11.5px; color:var(--muted); }
+  .copy { margin-left:auto; font:inherit; font-size:11.5px; padding:2px 9px;
+          border:1px solid var(--border); background:var(--plane);
+          color:var(--ink-2); border-radius:5px; cursor:pointer; }
   .chead { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
   .chead b { font-weight:600; font-size:12px; text-transform:uppercase;
              letter-spacing:.04em; color:var(--muted); }
@@ -81,6 +89,8 @@
   .slide { display:none; }
   .slide.on { display:block; }
   .none { color:var(--muted); font-size:12.5px; padding:4px 0 2px; }
+  @media (max-width:1100px) { .cols { grid-template-columns:1fr 1fr; }
+                              .col.nextup { grid-column:1 / -1; } }
   @media (max-width:820px) { .cols { grid-template-columns:1fr; } }
   .nextup ul { margin:0 0 2px; padding-left:18px; color:var(--ink-2); }
   .col ul { list-style:none; padding:0; margin:0 0 2px; }
@@ -92,6 +102,7 @@
      speak the same visual language -- a uniform batch needs no repeated label. */
   .hist li .c { width:11px; height:11px; flex:none; align-self:center; }
   .hist li:last-child { border-bottom:none; }
+  .hist .pill { white-space:nowrap; }
   .col .u { color:var(--muted); font-size:12px; }
   .col a { color:inherit; }
   .nextup li { margin:1px 0; }
@@ -142,6 +153,8 @@
   a.c { text-decoration:none; }
   a.c:hover { outline:2px solid var(--ink); outline-offset:1px; }
   body.ka .c.video { display:none; }
+  body.ka .full-only { display:none; }
+  .donext li .c.video { display:inline-block; width:9px; height:9px; }
   .m-full { display:none; }
   body:not(.ka) .m-ka { display:none; }
   body:not(.ka) .m-full { display:inline; }
@@ -323,14 +336,14 @@
     <div class="course">
       <h2>7th grade math (TX TEKS)
         <span class="meta m-ka">
-          18/142 assigned &middot;
+          15/142 assigned &middot;
           6 done &middot; 9 missed &middot;
-          3 outstanding
+          0 outstanding
         </span>
         <span class="meta m-full">
-          43/302 assigned &middot;
+          35/302 assigned &middot;
           19 done &middot; 16 missed &middot;
-          8 outstanding
+          0 outstanding
         </span>
       </h2>
 
@@ -1094,6 +1107,179 @@
           
         </div>
 
+        <div class="col donext">
+          <div class="chead"><b>Do next</b> <span class="count m-ka">9</span><span class="count m-full">16</span>
+            <button class="copy" type="button" data-copy="7th grade math (TX TEKS) - do next
+
+Number and operations
+- Adding fractions with different signs (missed, was due Oct 19)
+- Adding & subtracting fractions (missed, was due Oct 19)
+- Number and operations: Quiz 1 (missed, was due Oct 19)
+- Multiplying positive and negative fractions (missed, was due Oct 19)
+- Multiplying positive and negative fractions (missed, was due Oct 19)
+- Dividing fractions: 3/5 ÷ 1/2 (missed, was due Oct 19)
+- Dividing negative fractions (missed, was due Oct 19)
+- Dividing positive and negative fractions (missed, was due Oct 19)
+- Dividing mixed numbers (missed, was due Oct 19)
+- Dividing mixed numbers with negatives (missed, was due Oct 19)
+- Equivalent expressions with negative numbers (multiplication and division) (missed, was due Oct 19)
+- Equivalent expressions with negative numbers (multiplication and division) (missed, was due Oct 19)
+- Number and operations: Quiz 2 (missed, was due Oct 19)
+- Sales tax (missed, was due Oct 22)
+- Tax forms and tax terms (missed, was due Oct 22)
+- Find net worth (missed, was due Oct 22)" data-copy-ka="7th grade math (TX TEKS) - do next
+
+Number and operations
+- Number and operations: Quiz 1 (missed, was due Oct 19)
+- Multiplying positive and negative fractions (missed, was due Oct 19)
+- Dividing positive and negative fractions (missed, was due Oct 19)
+- Dividing mixed numbers with negatives (missed, was due Oct 19)
+- Equivalent expressions with negative numbers (multiplication and division) (missed, was due Oct 19)
+- Number and operations: Quiz 2 (missed, was due Oct 19)
+- Sales tax (missed, was due Oct 22)
+- Tax forms and tax terms (missed, was due Oct 22)
+- Find net worth (missed, was due Oct 22)">Copy</button></div>
+          
+            
+            <div class="ngroup">
+              <div class="nunit">Number and operations</div>
+              <ul>
+                
+                <li class="full-only"><i class="c critical video" data-title="Adding fractions with different signs" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Adding and subtracting rational numbers" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/x6b17ba59:rational-numbers-addition-and-subtraction/cc-7th-add-sub-neg-fractions/v/adding-fractions-with-different-signs" target="_blank" rel="noopener">Adding fractions with different signs</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Adding & subtracting fractions" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Adding and subtracting rational numbers" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/mappers/number-and-operations-224-227/x261c2cc7:adding-subtracting-negative-fractions/v/adding-and-subtracting-three-fractions" target="_blank" rel="noopener">Adding & subtracting fractions</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Number and operations: Quiz 1" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="TopicQuiz"
+                       data-lesson="" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:number-and-operations/xa876d090ec748f45:adding-and-subtracting-negative-numbers-variables/quiz/xa876d090ec748f45:number-and-operations-quiz-1" target="_blank" rel="noopener">Number and operations: Quiz 1</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Multiplying positive and negative fractions" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-mult-div-neg-fractions/v/multiplying-negative-and-positive-fractions" target="_blank" rel="noopener">Multiplying positive and negative fractions</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Multiplying positive and negative fractions" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-mult-div-neg-fractions/e/multiplying_fractions" target="_blank" rel="noopener">Multiplying positive and negative fractions</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Dividing fractions: 3/5 ÷ 1/2" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-arithmetic-operations/cc-6th-dividing-fractions/v/dividing-fractions-example" target="_blank" rel="noopener">Dividing fractions: 3/5 ÷ 1/2</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Dividing negative fractions" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-mult-div-neg-fractions/v/examples-of-dividing-negative-fractions" target="_blank" rel="noopener">Dividing negative fractions</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Dividing positive and negative fractions" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-mult-div-neg-fractions/e/dividing_fractions_2" target="_blank" rel="noopener">Dividing positive and negative fractions</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Dividing mixed numbers" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-mult-div-neg-fractions/v/dividing-mixed-numbers" target="_blank" rel="noopener">Dividing mixed numbers</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Dividing mixed numbers with negatives" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Multiplying and dividing negative fractions" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-mult-div-neg-fractions/e/dividing-mixed-numbers" target="_blank" rel="noopener">Dividing mixed numbers with negatives</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Equivalent expressions with negative numbers (multiplication and division)" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Properties of multiplication and division" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-properties-of-mult-div/v/arithmetic-properties-with-negative-numbers" target="_blank" rel="noopener">Equivalent expressions with negative numbers (multiplication and division)</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Equivalent expressions with negative numbers (multiplication and division)" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Properties of multiplication and division" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-negative-numbers-multiply-and-divide/cc-7th-properties-of-mult-div/e/properties-of-multiplication-with-negative-numbers" target="_blank" rel="noopener">Equivalent expressions with negative numbers (multiplication and division)</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Number and operations: Quiz 2" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="TopicQuiz"
+                       data-lesson="" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:number-and-operations/xa876d090ec748f45:properties-of-multiplication-and-division/quiz/xa876d090ec748f45:number-and-operations-quiz-2" target="_blank" rel="noopener">Number and operations: Quiz 2</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Sales tax" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Sales tax" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/7th-grade-math-eureka-squared-aligned/x314834f71a55c568:percent-and-applications-of-percent/x314834f71a55c568:tips-and-taxes/e/sales-tax" target="_blank" rel="noopener">Sales tax</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c critical" data-title="Tax forms and tax terms" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Income tax withholding" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/financial-mathematics-tx-teks/x647545bbd61df4a7:taxes-and-tax-forms/x647545bbd61df4a7:tax-forms/e/tax-forms-and-tax-terms" target="_blank" rel="noopener">Tax forms and tax terms</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c critical" data-title="Find net worth" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Net worth" data-unit="Number and operations"></i>
+                    <span><a href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:number-and-operations/xa876d090ec748f45:net-worth/e/find-net-worth" target="_blank" rel="noopener">Find net worth</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+              </ul>
+            </div>
+            
+            
+          
+        </div>
+
         <div class="col nextup">
           <div class="chead"><b>Assign next</b></div>
           
@@ -1250,8 +1436,8 @@
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-variables-expressions/cc-7th-linear-eq-word-probs/v/linear-equation-word-problem-example" target="_blank" rel="noopener" data-title="Two-step equation word problem: oranges" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Two-step equation word problems" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Two-step equation word problem: oranges. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-variables-expressions/cc-7th-linear-eq-word-probs/e/interpret-two-step-equation-word-problems" target="_blank" rel="noopener" data-title="Interpret two-step equation word problems" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Two-step equation word problems" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Interpret two-step equation word problems. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-variables-expressions/cc-7th-linear-eq-word-probs/e/linear-equation-world-problems-2" target="_blank" rel="noopener" data-title="Two-step equations word problems" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Two-step equation word problems" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Two-step equations word problems. Exercise. Not assigned yet." data-url="1"></a><a class="c empty quiz"
-                 href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:one-variable-equations-and-inequalities/xa876d090ec748f45:two-step-equation-word-problems/quiz/xa876d090ec748f45:one-variable-equations-and-inequalities-quiz-2" target="_blank" rel="noopener" data-title="One-variable equations and inequalities: Quiz 2" data-label="Not assigned yet" data-role="empty" data-shape="quiz" data-kind="TopicQuiz" data-lesson="" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="One-variable equations and inequalities: Quiz 2. TopicQuiz. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-equations-and-inequalities/cc-6th-inequalities/v/testing-solutions-to-inequalities" target="_blank" rel="noopener" data-title="Testing solutions to inequalities" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Solutions to inequalities" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Testing solutions to inequalities. Video. Assigned." data-url="1"></a><a class="c empty item"
+                 href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:one-variable-equations-and-inequalities/xa876d090ec748f45:two-step-equation-word-problems/quiz/xa876d090ec748f45:one-variable-equations-and-inequalities-quiz-2" target="_blank" rel="noopener" data-title="One-variable equations and inequalities: Quiz 2" data-label="Not assigned yet" data-role="empty" data-shape="quiz" data-kind="TopicQuiz" data-lesson="" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="One-variable equations and inequalities: Quiz 2. TopicQuiz. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-equations-and-inequalities/cc-6th-inequalities/v/testing-solutions-to-inequalities" target="_blank" rel="noopener" data-title="Testing solutions to inequalities" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Solutions to inequalities" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Testing solutions to inequalities. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-variables-expressions/cc-7th-inequalities/e/testing-solutions-of-inequalities" target="_blank" rel="noopener" data-title="Testing solutions to inequalities" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Solutions to inequalities" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Testing solutions to inequalities. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/math/7th-grade-math-eureka-squared-aligned/x314834f71a55c568:expressions-equations-and-inequalities/x314834f71a55c568:using-equations-to-solve-inequalities/v/modeling-two-step-inequalities" target="_blank" rel="noopener" data-title="Modeling two step inequalities" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Two-step inequalities" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Modeling two step inequalities. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/math/7th-grade-math-eureka-squared-aligned/x314834f71a55c568:expressions-equations-and-inequalities/x314834f71a55c568:preserving-and-reversing/v/modeling-inequalities-with-negative-coefficients" target="_blank" rel="noopener" data-title="Modeling inequalities with negative coefficients" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Two-step inequalities" data-unit="One-variable equations and inequalities" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Modeling inequalities with negative coefficients. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
@@ -1304,8 +1490,8 @@
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-geometry/cc-7th-unknown-angle-algebra/v/using-algebra-to-find-the-measures-of-vertical-angles" target="_blank" rel="noopener" data-title="Equation practice with vertical angles" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Missing angles with variables" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Equation practice with vertical angles. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-geometry/cc-7th-unknown-angle-algebra/e/create-equations-to-solve-for-missing-angles" target="_blank" rel="noopener" data-title="Create equations to solve for missing angles" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Missing angles with variables" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Create equations to solve for missing angles. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-geometry/cc-7th-unknown-angle-algebra/e/solving-for-unknown-angles" target="_blank" rel="noopener" data-title="Unknown angle problems (with algebra)" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Missing angles with variables" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Unknown angle problems (with algebra). Exercise. Not assigned yet." data-url="1"></a><a class="c empty item"
-                 href="https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-angles-between-lines/e/angle_addition_postulate" target="_blank" rel="noopener" data-title="Equation practice with angle addition" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Missing angles with variables" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Equation practice with angle addition. Exercise. Not assigned yet." data-url="1"></a><a class="c assigned item"
-                 href="https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-triangle-angles/e/triangle_angles_1" target="_blank" rel="noopener" data-title="Find angles in triangles" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Exercise" data-lesson="Triangle angles" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Find angles in triangles. Exercise. Assigned." data-url="1"></a><a class="c empty item"
+                 href="https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-angles-between-lines/e/angle_addition_postulate" target="_blank" rel="noopener" data-title="Equation practice with angle addition" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Missing angles with variables" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Equation practice with angle addition. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item"
+                 href="https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-triangle-angles/e/triangle_angles_1" target="_blank" rel="noopener" data-title="Find angles in triangles" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Triangle angles" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Find angles in triangles. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/geometry/hs-geo-congruence/hs-geo-working-with-triangles/e/find-angles-in-isosceles-triangles" target="_blank" rel="noopener" data-title="Find angles in isosceles triangles" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Triangle angles" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Find angles in isosceles triangles. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:geometric-equations/xa876d090ec748f45:triangle-angles/v/finding-triangle-angles-with-algebra" target="_blank" rel="noopener" data-title="Finding triangle angles with algebra" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Triangle angles" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Finding triangle angles with algebra. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:geometric-equations/xa876d090ec748f45:triangle-angles/e/triangle-angles-algebra" target="_blank" rel="noopener" data-title="Find interior triangle angles with algebra" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Triangle angles" data-unit="Geometric equations" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Find interior triangle angles with algebra. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
@@ -1347,13 +1533,13 @@
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-ratio-proportion/cc-7th-equations-of-proportional-relationships/e/writing-proportional-equations" target="_blank" rel="noopener" data-title="Writing proportional equations" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Equations of proportional relationships" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Writing proportional equations. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-ratio-proportion/cc-7th-equations-of-proportional-relationships/v/constructing-an-equation-for-a-proportional-relationship" target="_blank" rel="noopener" data-title="Writing proportional equations from tables" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Equations of proportional relationships" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Writing proportional equations from tables. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-ratio-proportion/cc-7th-equations-of-proportional-relationships/e/writing-proportional-equations-from-tables" target="_blank" rel="noopener" data-title="Writing proportional equations from tables" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Equations of proportional relationships" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Writing proportional equations from tables. Exercise. Not assigned yet." data-url="1"></a><a class="c empty quiz"
-                 href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:proportional-reasoning-with-ratios-and-rates/xa876d090ec748f45:equations-of-proportional-relationships/quiz/xa876d090ec748f45:proportional-reasoning-with-ratios-and-rates-quiz-2" target="_blank" rel="noopener" data-title="Proportional reasoning with ratios and rates: Quiz 2" data-label="Not assigned yet" data-role="empty" data-shape="quiz" data-kind="TopicQuiz" data-lesson="" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Proportional reasoning with ratios and rates: Quiz 2. TopicQuiz. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/introduction-to-rates" target="_blank" rel="noopener" data-title="Intro to rates" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Intro to rates. Video. Assigned." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/finding-unit-rates" target="_blank" rel="noopener" data-title="Solving unit rate problem" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Solving unit rate problem. Video. Assigned." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/finding-unit-prices" target="_blank" rel="noopener" data-title="Solving unit price problem" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Solving unit price problem. Video. Assigned." data-url="1"></a><a class="c assigned item"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/e/unit-rates" target="_blank" rel="noopener" data-title="Unit rates" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Exercise" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Unit rates. Exercise. Assigned." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/practice-computing-and-comparing-rates" target="_blank" rel="noopener" data-title="Comparing rates example" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Comparing rates example. Video. Assigned." data-url="1"></a><a class="c assigned item"
-                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/e/comparing-rates" target="_blank" rel="noopener" data-title="Comparing rates" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Exercise" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Comparing rates. Exercise. Assigned." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:proportional-reasoning-with-ratios-and-rates/xa876d090ec748f45:equations-of-proportional-relationships/quiz/xa876d090ec748f45:proportional-reasoning-with-ratios-and-rates-quiz-2" target="_blank" rel="noopener" data-title="Proportional reasoning with ratios and rates: Quiz 2" data-label="Not assigned yet" data-role="empty" data-shape="quiz" data-kind="TopicQuiz" data-lesson="" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Proportional reasoning with ratios and rates: Quiz 2. TopicQuiz. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/introduction-to-rates" target="_blank" rel="noopener" data-title="Intro to rates" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Intro to rates. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/finding-unit-rates" target="_blank" rel="noopener" data-title="Solving unit rate problem" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Solving unit rate problem. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/finding-unit-prices" target="_blank" rel="noopener" data-title="Solving unit price problem" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Solving unit price problem. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/e/unit-rates" target="_blank" rel="noopener" data-title="Unit rates" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Unit rates. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/v/practice-computing-and-comparing-rates" target="_blank" rel="noopener" data-title="Comparing rates example" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Comparing rates example. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
+                 href="https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-rates/e/comparing-rates" target="_blank" rel="noopener" data-title="Comparing rates" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Intro to rates" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Comparing rates. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-fractions-decimals/cc-7th-rates/v/determining-rates-with-fractions" target="_blank" rel="noopener" data-title="Rates with fractions" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Rate problems with fractions" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Rates with fractions. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-fractions-decimals/cc-7th-rates/e/rate_problems_1" target="_blank" rel="noopener" data-title="Rates with fractions" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Rate problems with fractions" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Rates with fractions. Exercise. Not assigned yet." data-url="1"></a><a class="c empty quiz"
                  href="https://www.khanacademy.org/math/grade-7-math-tx/xa876d090ec748f45:proportional-reasoning-with-ratios-and-rates/xa876d090ec748f45:rate-problems-with-fractions/quiz/xa876d090ec748f45:proportional-reasoning-with-ratios-and-rates-quiz-3" target="_blank" rel="noopener" data-title="Proportional reasoning with ratios and rates: Quiz 3" data-label="Not assigned yet" data-role="empty" data-shape="quiz" data-kind="TopicQuiz" data-lesson="" data-unit="Proportional reasoning with ratios and rates" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Proportional reasoning with ratios and rates: Quiz 3. TopicQuiz. Not assigned yet." data-url="1"></a><a class="c empty item video"
@@ -1591,9 +1777,9 @@
           0 outstanding
         </span>
         <span class="meta m-full">
-          72/348 assigned &middot;
+          63/348 assigned &middot;
           47 done &middot; 16 missed &middot;
-          9 outstanding
+          0 outstanding
         </span>
       </h2>
 
@@ -2571,6 +2757,200 @@
           
         </div>
 
+        <div class="col donext">
+          <div class="chead"><b>Do next</b> <span class="count m-ka">8</span><span class="count m-full">16</span>
+            <button class="copy" type="button" data-copy="7th grade reading, grammar, and vocab - do next
+
+Reading: Key ideas and details
+- Analyzing relationships in informational texts (missed, was due Oct 19)
+- Analyzing how authors connect ideas | Guided practice (missed, was due Oct 19)
+- The elements of a story (missed, was due Oct 19)
+- The elements of a drama (missed, was due Oct 19)
+- Analyzing story elements | Guided practice (missed, was due Oct 19)
+- Idea and story development (missed, was due Oct 19)
+
+Reading: Key ideas and details | Long passage practice
+- Reading strategy: Visualize (missed, was due Oct 19)
+- Becoming Muhammad Ali (missed, was due Oct 19)
+- The Dreamer (missed, was due Oct 19)
+- Reading strategy: Summarize as you read (missed, was due Oct 19)
+- Inaugural Ballers: The True Story of the First U.S. Women’s Olympic Basketball Team (missed, was due Oct 19)
+- The Boy Who Harnessed the Wind (missed, was due Oct 19)
+- Reading strategy: Set a purpose for reading (missed, was due Oct 19)
+- Drinking icebergs? (missed, was due Oct 19)
+- Pocahontas (from Teen Trailblazers) (missed, was due Oct 19)
+
+Grammar: Nouns
+- Regular and irregular plural nouns (missed, was due Oct 22)" data-copy-ka="7th grade reading, grammar, and vocab - do next
+
+Reading: Key ideas and details
+- Idea and story development (missed, was due Oct 19)
+
+Reading: Key ideas and details | Long passage practice
+- Becoming Muhammad Ali (missed, was due Oct 19)
+- The Dreamer (missed, was due Oct 19)
+- Inaugural Ballers: The True Story of the First U.S. Women’s Olympic Basketball Team (missed, was due Oct 19)
+- The Boy Who Harnessed the Wind (missed, was due Oct 19)
+- Drinking icebergs? (missed, was due Oct 19)
+- Pocahontas (from Teen Trailblazers) (missed, was due Oct 19)
+
+Grammar: Nouns
+- Regular and irregular plural nouns (missed, was due Oct 22)">Copy</button></div>
+          
+            
+            <div class="ngroup">
+              <div class="nunit">Reading: Key ideas and details</div>
+              <ul>
+                
+                <li class="full-only"><i class="c critical video" data-title="Analyzing relationships in informational texts" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Analyzing idea and story development" data-unit="Reading: Key ideas and details"></i>
+                    <span><a href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:key-ideas-and-details-8/x435b1de09a877dd7:analyzing-idea-and-story-development-8/v/g7-analyzing-relationships" target="_blank" rel="noopener">Analyzing relationships in informational texts</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Analyzing how authors connect ideas | Guided practice" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Analyzing idea and story development" data-unit="Reading: Key ideas and details"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-7/x7538838f96af3430:analyzing-idea-and-story-development-7/a/interactions-between-individuals-events-and-ideas-in-a-text" target="_blank" rel="noopener">Analyzing how authors connect ideas | Guided practice</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="The elements of a story" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Analyzing idea and story development" data-unit="Reading: Key ideas and details"></i>
+                    <span><a href="https://www.khanacademy.org/ela/cc-2nd-reading-vocab/xfb4fc0bf01437792:cc-2nd-the-moon/xfb4fc0bf01437792:close-reading-fiction/v/the-elements-of-a-story-reading" target="_blank" rel="noopener">The elements of a story</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="The elements of a drama" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Analyzing idea and story development" data-unit="Reading: Key ideas and details"></i>
+                    <span><a href="https://www.khanacademy.org/ela/cc-2nd-reading-vocab/xfb4fc0bf01437792:cc-2nd-fairy-tales-retold/xfb4fc0bf01437792:reading-for-understanding/v/the-elements-of-a-drama-reading" target="_blank" rel="noopener">The elements of a drama</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Analyzing story elements | Guided practice" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Analyzing idea and story development" data-unit="Reading: Key ideas and details"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-7/x7538838f96af3430:analyzing-idea-and-story-development-7/a/how-elements-of-a-story-interact" target="_blank" rel="noopener">Analyzing story elements | Guided practice</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Idea and story development" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Analyzing idea and story development" data-unit="Reading: Key ideas and details"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-7/x7538838f96af3430:analyzing-idea-and-story-development-7/e/idea-and-story-development-7" target="_blank" rel="noopener">Idea and story development</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+              </ul>
+            </div>
+            
+            <div class="ngroup">
+              <div class="nunit">Reading: Key ideas and details | Long passage practice</div>
+              <ul>
+                
+                <li class="full-only"><i class="c critical video" data-title="Reading strategy: Visualize" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Reading literary texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-literary-texts-7/a/reading-strategy-visualize-7" target="_blank" rel="noopener">Reading strategy: Visualize</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Becoming Muhammad Ali" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Reading literary texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-literary-texts-7/e/becoming-muhammad-ali" target="_blank" rel="noopener">Becoming Muhammad Ali</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="The Dreamer" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Reading literary texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-literary-texts-7/e/the-dreamer" target="_blank" rel="noopener">The Dreamer</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Reading strategy: Summarize as you read" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Reading informational texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-informational-texts-7/a/reading-strategy-summarize-as-you-read-7" target="_blank" rel="noopener">Reading strategy: Summarize as you read</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Inaugural Ballers: The True Story of the First U.S. Women’s Olympic Basketball Team" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Reading informational texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-informational-texts-7/e/inaugural-ballers-the-true-story-of-the-first-u-s-womens-olympic-basketball-team" target="_blank" rel="noopener">Inaugural Ballers: The True Story of the First U.S. Women’s Olympic Basketball Team</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="The Boy Who Harnessed the Wind" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Reading informational texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-informational-texts-7/e/the-boy-who-harnessed-the-wind" target="_blank" rel="noopener">The Boy Who Harnessed the Wind</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Reading strategy: Set a purpose for reading" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Reading argumentative texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-argumentative-texts-7/a/reading-strategy-set-a-purpose-for-reading-7" target="_blank" rel="noopener">Reading strategy: Set a purpose for reading</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Drinking icebergs?" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Reading argumentative texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-argumentative-texts-7/e/drinking-icebergs" target="_blank" rel="noopener">Drinking icebergs?</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+                <li><i class="c critical" data-title="Pocahontas (from Teen Trailblazers)" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Reading argumentative texts" data-unit="Reading: Key ideas and details | Long passage practice"></i>
+                    <span><a href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-long-passage-practice-7/x7538838f96af3430:key-ideas-and-details-reading-argumentative-texts-7/e/teen-trailblazers" target="_blank" rel="noopener">Pocahontas (from Teen Trailblazers)</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 19</span></span></li>
+                
+              </ul>
+            </div>
+            
+            <div class="ngroup">
+              <div class="nunit">Grammar: Nouns</div>
+              <ul>
+                
+                <li><i class="c critical" data-title="Regular and irregular plural nouns" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Plural nouns " data-unit="Grammar: Nouns"></i>
+                    <span><a href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:nouns-8-grammar/x435b1de09a877dd7:plural-nouns-8-grammar/e/regular-and-irregular-plural-nouns-grammar-7" target="_blank" rel="noopener">Regular and irregular plural nouns</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+              </ul>
+            </div>
+            
+            
+          
+        </div>
+
         <div class="col nextup">
           <div class="chead"><b>Assign next</b></div>
           
@@ -2684,8 +3064,8 @@
           <td class="uname">Reading: Key ideas and details</td>
           <td>
             <div class="cells">
-              <a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:key-ideas-and-details-8/x435b1de09a877dd7:notes-organizer-unit-1-study-hack-8/a/the-rules-we-live-by-notes-organizer" target="_blank" rel="noopener" data-title="Notes organizer & study hack #1" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Article" data-lesson="Notes organizer & study hack #1" data-unit="Reading: Key ideas and details" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Notes organizer & study hack #1. Article. Assigned." data-url="1"></a><a class="c good item video"
+              <a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:key-ideas-and-details-8/x435b1de09a877dd7:notes-organizer-unit-1-study-hack-8/a/the-rules-we-live-by-notes-organizer" target="_blank" rel="noopener" data-title="Notes organizer & study hack #1" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Notes organizer & study hack #1" data-unit="Reading: Key ideas and details" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Notes organizer & study hack #1. Article. Not assigned yet." data-url="1"></a><a class="c good item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-7/x7538838f96af3430:citing-text-evidence-7/a/supporting-ideas-with-text-evidence-7" target="_blank" rel="noopener" data-title="Supporting ideas with text evidence | Guided practice" data-label="Done" data-role="good" data-shape="item" data-kind="Article" data-lesson="Citing text evidence" data-unit="Reading: Key ideas and details" data-due="2026-10-15" data-assigned="2026-10-14" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="Wed Oct 14, 2:17 PM" data-attempts="" aria-label="Supporting ideas with text evidence | Guided practice. Article. Done. Due 2026-10-15." data-url="1"></a><a class="c good item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:key-ideas-and-details-8/x435b1de09a877dd7:citing-text-evidence-8/v/citing-evidence-in-literary-analysis-reading" target="_blank" rel="noopener" data-title="Citing evidence in literary analysis" data-label="Done" data-role="good" data-shape="item" data-kind="Video" data-lesson="Citing text evidence" data-unit="Reading: Key ideas and details" data-due="2026-10-15" data-assigned="2026-10-14" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="Wed Oct 14, 5:14 PM" data-attempts="" aria-label="Citing evidence in literary analysis. Video. Done. Due 2026-10-15." data-url="1"></a><a class="c good item"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:key-ideas-and-details-7/x7538838f96af3430:citing-text-evidence-7/e/text-evidence-7" target="_blank" rel="noopener" data-title="Text evidence" data-label="Done" data-role="good" data-shape="item" data-kind="Exercise" data-lesson="Citing text evidence" data-unit="Reading: Key ideas and details" data-due="2026-10-15" data-assigned="2026-10-14" data-score="100%" data-reassigned="" data-alsoin="" data-prev="" data-doneat="Wed Oct 14, 5:17 PM" data-attempts="2" aria-label="Text evidence. Exercise. Done. Due 2026-10-15." data-url="1"></a><a class="c good item video"
@@ -2837,19 +3217,19 @@
           <td class="uname">Reading: Craft and structure</td>
           <td>
             <div class="cells">
-              <a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:notes-organizer-unit-3-study-hack-8/a/what-defines-us-notes-organizer" target="_blank" rel="noopener" data-title="Notes organizer & study hack #2" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Article" data-lesson="Notes organizer & study hack #2" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Notes organizer & study hack #2. Article. Assigned." data-url="1"></a><a class="c empty item video"
+              <a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:notes-organizer-unit-3-study-hack-8/a/what-defines-us-notes-organizer" target="_blank" rel="noopener" data-title="Notes organizer & study hack #2" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Notes organizer & study hack #2" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Notes organizer & study hack #2. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:interpreting-words-in-context-8/v/context-g5-reading" target="_blank" rel="noopener" data-title="Using context clues to determine the meaning of a word" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Interpreting words in context" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Using context clues to determine the meaning of a word. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
-                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:interpreting-words-in-context-7/a/how-does-word-choice-impact-meaning-and-tone" target="_blank" rel="noopener" data-title="Analyzing the effect of word choice on meaning and tone | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Interpreting words in context" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing the effect of word choice on meaning and tone | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/9th-grade-reading-vocabulary-indiana/x068d7167a2598a90:crossing-the-line-9-indiana/x068d7167a2598a90:interpreting-words-in-context-9-indiana/v/connotation-reading" target="_blank" rel="noopener" data-title="Connotation" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Interpreting words in context" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="Grammar: Word study" data-prev="" data-doneat="" data-attempts="" aria-label="Connotation. Video. Assigned." data-url="1"></a><a class="c empty item"
+                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:interpreting-words-in-context-7/a/how-does-word-choice-impact-meaning-and-tone" target="_blank" rel="noopener" data-title="Analyzing the effect of word choice on meaning and tone | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Interpreting words in context" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing the effect of word choice on meaning and tone | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/9th-grade-reading-vocabulary-indiana/x068d7167a2598a90:crossing-the-line-9-indiana/x068d7167a2598a90:interpreting-words-in-context-9-indiana/v/connotation-reading" target="_blank" rel="noopener" data-title="Connotation" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Interpreting words in context" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="Grammar: Word study" data-prev="" data-doneat="" data-attempts="" aria-label="Connotation. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:interpreting-words-in-context-7/e/words-in-context-7" target="_blank" rel="noopener" data-title="Words in context" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Interpreting words in context" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Words in context. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
-                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:analyzing-text-structure-7/a/how-do-authors-structure-a-text-to-create-meaning" target="_blank" rel="noopener" data-title="Analyzing text structure | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing text structure | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:analyzing-text-structure-8/v/part-to-whole-relationships-in-text-structure-reading" target="_blank" rel="noopener" data-title="Part-to-whole relationships in text structure" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Part-to-whole relationships in text structure. Video. Assigned." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:analyzing-text-structure-7/a/how-do-authors-structure-a-text-to-create-meaning" target="_blank" rel="noopener" data-title="Analyzing text structure | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing text structure | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:analyzing-text-structure-8/v/part-to-whole-relationships-in-text-structure-reading" target="_blank" rel="noopener" data-title="Part-to-whole relationships in text structure" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Part-to-whole relationships in text structure. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:analyzing-text-structure-7/a/how-can-the-form-of-a-poem-or-drama-affect-its-meaning" target="_blank" rel="noopener" data-title="Analyzing literary text structure | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing literary text structure | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:analyzing-text-structure-7/v/poetry-structures-g7-g8" target="_blank" rel="noopener" data-title="Poetry structures" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Poetry structures. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:key-ideas-and-details-8/x435b1de09a877dd7:analyzing-idea-and-story-development-8/v/drama-elements-g7-g8" target="_blank" rel="noopener" data-title="Drama elements " data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Drama elements . Video. Not assigned yet." data-url="1"></a><a class="c empty item"
-                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:analyzing-text-structure-7/e/text-structure-7" target="_blank" rel="noopener" data-title="Text structure" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Text structure. Exercise. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:identifying-authors-purpose-8/v/analyzing-an-author-s-purpose-reading" target="_blank" rel="noopener" data-title="Analyzing an author's purpose" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Identifying author's purpose" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing an author's purpose. Video. Assigned." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:analyzing-text-structure-7/e/text-structure-7" target="_blank" rel="noopener" data-title="Text structure" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Analyzing text structure" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Text structure. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:craft-and-structure-8/x435b1de09a877dd7:identifying-authors-purpose-8/v/analyzing-an-author-s-purpose-reading" target="_blank" rel="noopener" data-title="Analyzing an author's purpose" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Identifying author's purpose" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing an author's purpose. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:identifying-authors-purpose-7/a/what-techniques-can-authors-use-to-convey-their-purpose" target="_blank" rel="noopener" data-title="Identifying an author's purpose | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Identifying author's purpose" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Identifying an author's purpose | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:identifying-authors-purpose-7/e/authors-purpose-7" target="_blank" rel="noopener" data-title="Author's purpose" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Identifying author's purpose" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Author's purpose. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:craft-and-structure-7/x7538838f96af3430:determining-point-of-view-7/a/determining-an-authors-point-of-view" target="_blank" rel="noopener" data-title="Determining an author’s point of view | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Determining point of view" data-unit="Reading: Craft and structure" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Determining an author’s point of view | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
@@ -2981,13 +3361,13 @@
           <td class="uname">Reading: Integration of knowledge and ideas</td>
           <td>
             <div class="cells">
-              <a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:integration-of-knowledge-and-ideas-8/x435b1de09a877dd7:notes-organizer-unit-5-study-hack-8/a/the-living-seas-notes-organizer" target="_blank" rel="noopener" data-title="Notes organizer & study hack #3" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Article" data-lesson="Notes organizer & study hack #3" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Notes organizer & study hack #3. Article. Assigned." data-url="1"></a><a class="c empty item video"
+              <a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:integration-of-knowledge-and-ideas-8/x435b1de09a877dd7:notes-organizer-unit-5-study-hack-8/a/the-living-seas-notes-organizer" target="_blank" rel="noopener" data-title="Notes organizer & study hack #3" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Notes organizer & study hack #3" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Notes organizer & study hack #3. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:comparing-media-7/a/connecting-textual-and-visual-evidence" target="_blank" rel="noopener" data-title="Connecting textual and visual evidence | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Comparing media" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Connecting textual and visual evidence | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/cc-2nd-reading-vocab/xfb4fc0bf01437792:cc-2nd-the-moon/xfb4fc0bf01437792:close-reading-informational-text/v/interpreting-text-features-reading" target="_blank" rel="noopener" data-title="Interpreting text features" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Comparing media" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Interpreting text features. Video. Not assigned yet." data-url="1"></a><a class="c empty item"
-                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:comparing-media-7/e/multimedia" target="_blank" rel="noopener" data-title="Multimedia" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Comparing media" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Multimedia. Exercise. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:integration-of-knowledge-and-ideas-8/x435b1de09a877dd7:evaluating-claims-and-arguments-8/v/what-is-an-argument-reading" target="_blank" rel="noopener" data-title="What is an argument?" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Evaluating claims and arguments" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="What is an argument?. Video. Assigned." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:evaluating-claims-and-arguments-7/v/using-examples-reading" target="_blank" rel="noopener" data-title="How do writers use examples to get their points across?" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Evaluating claims and arguments" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="How do writers use examples to get their points across?. Video. Assigned." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:comparing-media-7/e/multimedia" target="_blank" rel="noopener" data-title="Multimedia" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Comparing media" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Multimedia. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:integration-of-knowledge-and-ideas-8/x435b1de09a877dd7:evaluating-claims-and-arguments-8/v/what-is-an-argument-reading" target="_blank" rel="noopener" data-title="What is an argument?" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Evaluating claims and arguments" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="What is an argument?. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:evaluating-claims-and-arguments-7/v/using-examples-reading" target="_blank" rel="noopener" data-title="How do writers use examples to get their points across?" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Evaluating claims and arguments" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="How do writers use examples to get their points across?. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:evaluating-claims-and-arguments-7/a/evaluating-an-arguments-reasoning-and-evidence" target="_blank" rel="noopener" data-title="Evaluating an argument’s reasoning and evidence | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Evaluating claims and arguments" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Evaluating an argument’s reasoning and evidence | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:evaluating-claims-and-arguments-7/e/claims-and-arguments-7" target="_blank" rel="noopener" data-title="Claims and arguments" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Evaluating claims and arguments" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Claims and arguments. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/7th-grade-reading-and-vocabulary/x7538838f96af3430:integration-of-knowledge-and-ideas-7/x7538838f96af3430:comparing-two-texts-7/a/comparing-purposes-evidence-and-interpretations-across-texts" target="_blank" rel="noopener" data-title="Comparing texts | Guided practice" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Comparing two texts" data-unit="Reading: Integration of knowledge and ideas" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Comparing texts | Guided practice. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
@@ -3108,8 +3488,8 @@
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:figurative-language-8-grammar/e/figurative-language-grammar-7-8" target="_blank" rel="noopener" data-title="Figurative language" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Figurative language" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Figurative language. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:consulting-reference-materials-8-grammar/a/reading-dictionary-glossary-and-thesaurus-entries" target="_blank" rel="noopener" data-title="Reading dictionary, glossary, and thesaurus entries" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Consulting reference materials" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Reading dictionary, glossary, and thesaurus entries. Article. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:consulting-reference-materials-8-grammar/a/verifying-word-meanings-grammar-7" target="_blank" rel="noopener" data-title="Verifying word meanings" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Consulting reference materials" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Verifying word meanings. Article. Not assigned yet." data-url="1"></a><a class="c empty item"
-                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:consulting-reference-materials-8-grammar/e/consulting-reference-materials-grammar-7-8" target="_blank" rel="noopener" data-title="Consulting reference materials" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Consulting reference materials" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Consulting reference materials. Exercise. Not assigned yet." data-url="1"></a><a class="c assigned item video"
-                 href="https://www.khanacademy.org/ela/9th-grade-reading-vocabulary-indiana/x068d7167a2598a90:crossing-the-line-9-indiana/x068d7167a2598a90:interpreting-words-in-context-9-indiana/v/connotation-reading" target="_blank" rel="noopener" data-title="Connotation" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Precise language" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="Reading: Craft and structure" data-prev="" data-doneat="" data-attempts="" aria-label="Connotation. Video. Assigned." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:consulting-reference-materials-8-grammar/e/consulting-reference-materials-grammar-7-8" target="_blank" rel="noopener" data-title="Consulting reference materials" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Consulting reference materials" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Consulting reference materials. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
+                 href="https://www.khanacademy.org/ela/9th-grade-reading-vocabulary-indiana/x068d7167a2598a90:crossing-the-line-9-indiana/x068d7167a2598a90:interpreting-words-in-context-9-indiana/v/connotation-reading" target="_blank" rel="noopener" data-title="Connotation" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Precise language" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="Reading: Craft and structure" data-prev="" data-doneat="" data-attempts="" aria-label="Connotation. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:precise-language-8-grammar/a/choosing-among-words-with-similar-meanings-grammar-7" target="_blank" rel="noopener" data-title="Choosing among words with similar meanings" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Precise language" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Choosing among words with similar meanings. Article. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:precise-language-8-grammar/e/nuances-in-word-meaning-grammar-7" target="_blank" rel="noopener" data-title="Nuances in word meaning" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Precise language" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Nuances in word meaning. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/ela/8th-grade-reading-and-vocabulary/x435b1de09a877dd7:word-study-8-grammar/x435b1de09a877dd7:precise-language-8-grammar/a/analyzing-word-relationships-grammar-7" target="_blank" rel="noopener" data-title="Analyzing word relationships" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Precise language" data-unit="Grammar: Word study" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Analyzing word relationships. Article. Not assigned yet." data-url="1"></a><a class="c empty item"
@@ -3159,9 +3539,9 @@
           1 outstanding
         </span>
         <span class="meta m-full">
-          27/131 assigned &middot;
+          26/131 assigned &middot;
           15 done &middot; 10 missed &middot;
-          2 outstanding
+          1 outstanding
         </span>
       </h2>
 
@@ -4505,6 +4885,141 @@
           
         </div>
 
+        <div class="col donext">
+          <div class="chead"><b>Do next</b> <span class="count m-ka">5</span><span class="count m-full">11</span>
+            <button class="copy" type="button" data-copy="7th grade science (TX TEKS) - do next
+
+Elements and compounds
+- Elements (missed, was due Oct 22)
+- Learn and try: Elements, atoms, and the periodic table (missed, was due Oct 22)
+- Apply: Periodic table (missed, was due Oct 22)
+- Compounds and chemical formulas (missed, was due Oct 22)
+- Learn and try: Molecules, compounds, and chemical formulas (missed, was due Oct 22)
+- Apply: compounds and chemical formulas (missed, was due Oct 22)
+- Elements and compounds: Quiz 1 (missed, was due Oct 22)
+- Elements and compounds: Unit test (missed, was due Oct 22)
+
+Changes in matter and solutions
+- Physical properties (missed, was due Oct 22)
+- Learn and try: Physical properties and changes (missed, was due Oct 22)
+- Changes in matter and solutions: Unit test (in progress, due Oct 22)" data-copy-ka="7th grade science (TX TEKS) - do next
+
+Elements and compounds
+- Apply: Periodic table (missed, was due Oct 22)
+- Apply: compounds and chemical formulas (missed, was due Oct 22)
+- Elements and compounds: Quiz 1 (missed, was due Oct 22)
+- Elements and compounds: Unit test (missed, was due Oct 22)
+
+Changes in matter and solutions
+- Changes in matter and solutions: Unit test (in progress, due Oct 22)">Copy</button></div>
+          
+            
+            <div class="ngroup">
+              <div class="nunit">Elements and compounds</div>
+              <ul>
+                
+                <li class="full-only"><i class="c critical video" data-title="Elements" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Elements and atoms" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/cambridge-o-level-chemistry-cie/x8bc8fb44369617ed:atoms-elements-and-compounds/x8bc8fb44369617ed:elements-compounds-and-mixtures/v/elements" target="_blank" rel="noopener">Elements</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Learn and try: Elements, atoms, and the periodic table" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Elements and atoms" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/cambridge-o-level-chemistry-cie/x8bc8fb44369617ed:atoms-elements-and-compounds/x8bc8fb44369617ed:elements-compounds-and-mixtures/a/elements-atoms-and-the-periodic-table" target="_blank" rel="noopener">Learn and try: Elements, atoms, and the periodic table</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c critical" data-title="Apply: Periodic table" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Elements and atoms" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/grade-7-science-tx/xe25057200abc6bd6:elements-and-compounds/xe25057200abc6bd6:elements-and-atoms/e/apply-periodic-table-7th-teks" target="_blank" rel="noopener">Apply: Periodic table</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Compounds and chemical formulas" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Compounds and molecules" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/cambridge-o-level-chemistry-cie/x8bc8fb44369617ed:atoms-elements-and-compounds/x8bc8fb44369617ed:elements-compounds-and-mixtures/v/compounds-and-chemical-formulas" target="_blank" rel="noopener">Compounds and chemical formulas</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Learn and try: Molecules, compounds, and chemical formulas" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Compounds and molecules" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/cambridge-o-level-chemistry-cie/x8bc8fb44369617ed:atoms-elements-and-compounds/x8bc8fb44369617ed:elements-compounds-and-mixtures/a/compounds-and-chemical-formulas" target="_blank" rel="noopener">Learn and try: Molecules, compounds, and chemical formulas</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c critical" data-title="Apply: compounds and chemical formulas" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Exercise"
+                       data-lesson="Compounds and molecules" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/grade-7-science-tx/xe25057200abc6bd6:elements-and-compounds/xe25057200abc6bd6:compounds-and-molecules/e/apply-compounds-and-chemical-formulas-7th-teks" target="_blank" rel="noopener">Apply: compounds and chemical formulas</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c critical" data-title="Elements and compounds: Quiz 1" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="TopicQuiz"
+                       data-lesson="" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/grade-7-science-tx/xe25057200abc6bd6:elements-and-compounds/xe25057200abc6bd6:compounds-and-molecules/quiz/xe25057200abc6bd6:elements-and-compounds-quiz-1" target="_blank" rel="noopener">Elements and compounds: Quiz 1</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c critical" data-title="Elements and compounds: Unit test" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="TopicUnitTest"
+                       data-lesson="" data-unit="Elements and compounds"></i>
+                    <span><a href="https://www.khanacademy.org/science/grade-7-science-tx/xe25057200abc6bd6:elements-and-compounds/xe25057200abc6bd6:compounds-and-molecules/test/xe25057200abc6bd6:elements-and-compounds-unit-test" target="_blank" rel="noopener">Elements and compounds: Unit test</a>
+                    
+                    
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+              </ul>
+            </div>
+            
+            <div class="ngroup">
+              <div class="nunit">Changes in matter and solutions</div>
+              <ul>
+                
+                <li class="full-only"><i class="c critical video" data-title="Physical properties" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Video"
+                       data-lesson="Physical changes" data-unit="Changes in matter and solutions"></i>
+                    <span><a href="https://www.khanacademy.org/science/ms-chemistry/xc370bc422b7f75fc:physical-properties-of-matter/xc370bc422b7f75fc:intrinsic-and-extrinsic-properties/v/physical-properties" target="_blank" rel="noopener">Physical properties</a>
+                    
+                    <span class="u">&middot; Video</span>
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li class="full-only"><i class="c critical video" data-title="Learn and try: Physical properties and changes" data-label="Missed"
+                       data-role="critical" data-shape="item" data-kind="Article"
+                       data-lesson="Physical changes" data-unit="Changes in matter and solutions"></i>
+                    <span><a href="https://www.khanacademy.org/science/ms-chemistry/xc370bc422b7f75fc:physical-properties-of-matter/xc370bc422b7f75fc:intrinsic-and-extrinsic-properties/a/physical-properties-and-changes" target="_blank" rel="noopener">Learn and try: Physical properties and changes</a>
+                    
+                    <span class="u">&middot; Article</span>
+                    <span class="due">&middot; was due Oct 22</span></span></li>
+                
+                <li><i class="c serious" data-title="Changes in matter and solutions: Unit test" data-label="In progress"
+                       data-role="serious" data-shape="item" data-kind="TopicUnitTest"
+                       data-lesson="" data-unit="Changes in matter and solutions"></i>
+                    <span><a href="https://www.khanacademy.org/science/grade-7-science-tx/xe25057200abc6bd6:changes-in-matter-and-solutions/xe25057200abc6bd6:solutions/test/xe25057200abc6bd6:changes-in-matter-and-solutions-unit-test" target="_blank" rel="noopener">Changes in matter and solutions: Unit test</a>
+                    
+                    
+                    <span class="due">&middot; due Oct 22</span></span></li>
+                
+              </ul>
+            </div>
+            
+            
+          
+        </div>
+
         <div class="col nextup">
           <div class="chead"><b>Assign next</b></div>
           
@@ -4643,8 +5158,8 @@
           <td class="uname">Motion</td>
           <td>
             <div class="cells">
-              <a class="c assigned item video"
-                 href="https://www.khanacademy.org/science/cambridge-o-level-physics-cie/x0e04e0cb682fb793:kinematics/x0e04e0cb682fb793:speed-and-velocity/v/speed-and-velocity" target="_blank" rel="noopener" data-title="Speed and velocity" data-label="Assigned" data-role="assigned" data-shape="item" data-kind="Video" data-lesson="Describing motion" data-unit="Motion" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Speed and velocity. Video. Assigned." data-url="1"></a><a class="c empty item video"
+              <a class="c empty item video"
+                 href="https://www.khanacademy.org/science/cambridge-o-level-physics-cie/x0e04e0cb682fb793:kinematics/x0e04e0cb682fb793:speed-and-velocity/v/speed-and-velocity" target="_blank" rel="noopener" data-title="Speed and velocity" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Describing motion" data-unit="Motion" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Speed and velocity. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/science/cambridge-o-level-physics-cie/x0e04e0cb682fb793:kinematics/x0e04e0cb682fb793:acceleration/v/ms-acceleration" target="_blank" rel="noopener" data-title="Acceleration" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Video" data-lesson="Describing motion" data-unit="Motion" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Acceleration. Video. Not assigned yet." data-url="1"></a><a class="c empty item video"
                  href="https://www.khanacademy.org/science/cambridge-o-level-physics-cie/x0e04e0cb682fb793:kinematics/x0e04e0cb682fb793:speed-and-velocity/a/describing-motion" target="_blank" rel="noopener" data-title="Learn and try: Describing motion" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Article" data-lesson="Describing motion" data-unit="Motion" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Learn and try: Describing motion. Article. Not assigned yet." data-url="1"></a><a class="c empty item"
                  href="https://www.khanacademy.org/science/ms-physics/x1baed5db7c1bb50b:motion-and-forces/x1baed5db7c1bb50b:motion/e/understand-representing-motion" target="_blank" rel="noopener" data-title="Understand: Motion" data-label="Not assigned yet" data-role="empty" data-shape="item" data-kind="Exercise" data-lesson="Describing motion" data-unit="Motion" data-due="" data-assigned="" data-score="" data-reassigned="" data-alsoin="" data-prev="" data-doneat="" data-attempts="" aria-label="Understand: Motion. Exercise. Not assigned yet." data-url="1"></a><a class="c empty item"
@@ -7668,6 +8183,25 @@
   } catch (e) {}
 
   // --- per-course assignment history carousel -----------------------------
+  document.querySelectorAll('.copy[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const text = document.body.classList.contains('ka') ? btn.dataset.copyKa : btn.dataset.copy;
+      const done = () => { btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = 'Copy'; }, 1500); };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, () => fallback(text, done));
+      } else fallback(text, done);
+    });
+  });
+  function fallback(text, done) {
+    // file:// pages are not a secure context, so the async clipboard API
+    // may be missing there; a temporary textarea + execCommand still works.
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    ta.remove();
+  }
+
   document.querySelectorAll('.col.hist').forEach(function (box) {
     const slides = box.querySelectorAll('.slide');
     if (!slides.length) return;
