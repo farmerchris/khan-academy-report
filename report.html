@@ -8,7 +8,7 @@
   :root {
     --surface:#fcfcfb; --plane:#f9f9f7; --ink:#0b0b0b; --ink-2:#52514e;
     --muted:#898781; --rule:#e1e0d9; --border:rgba(11,11,11,0.10);
-    --good:#0ca30c; --late:#1a9e8c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --good:#0ca30c; --late:var(--good); --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
     --assigned:#c3c2b7; --empty:transparent; --empty-ring:#d8d7cf;
     /* Daily calendar: one hue, light -> dark = more work finished that day. */
     --h1:#bfe5bc; --h2:#7fca78; --h3:#3cae35; --h4:#0b7a0b;
@@ -126,7 +126,7 @@
        position:relative; }
   .c.good     { background:var(--good);     border-color:var(--good); }
   .c.warning  { background:var(--warning);  border-color:var(--warning); }
-  /* Done late is still done: a teal green, not the amber warning. */
+  /* Done late is still done: same green as Done; the word says "late". */
   .c.late     { background:var(--late);     border-color:var(--late); }
   .c.serious  { background:var(--serious);  border-color:var(--serious); }
   .c.critical { background:var(--critical); border-color:var(--critical); }
